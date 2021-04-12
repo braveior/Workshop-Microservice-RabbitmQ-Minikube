@@ -1,0 +1,1 @@
+# Workshop-Microservice-RabbitmQ-Minikube
