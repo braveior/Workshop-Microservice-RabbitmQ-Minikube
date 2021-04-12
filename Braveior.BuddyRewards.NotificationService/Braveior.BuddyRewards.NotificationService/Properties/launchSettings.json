@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Braveior.BuddyRewards.NotificationService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": "true"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

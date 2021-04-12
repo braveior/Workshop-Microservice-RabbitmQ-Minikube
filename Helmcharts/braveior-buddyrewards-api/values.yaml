@@ -1,0 +1,22 @@
+environment: development
+apphost: k8s
+label:
+  name: braveior-buddyrewards-api
+container:
+  name: braveior-buddyrewards-api
+  pullPolicy: IfNotPresent
+  image: braveior/braveior.buddyrewards.api
+  tag: v2
+  port: 80
+replicas: 1
+service:
+  type: NodePort
+  port: 8088
+mongoip: 192.168.0.8
+resources:
+  requests:
+    cpu: 25m 
+    memory: 64Mi
+  limits:
+    cpu: 75m
+    memory: 264Mi  

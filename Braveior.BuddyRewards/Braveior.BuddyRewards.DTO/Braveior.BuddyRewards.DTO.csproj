@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.1.0</Version>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageId>Braveior.BuddyRewards.DTO.Sreehari</PackageId>
+  </PropertyGroup>
+
+</Project>

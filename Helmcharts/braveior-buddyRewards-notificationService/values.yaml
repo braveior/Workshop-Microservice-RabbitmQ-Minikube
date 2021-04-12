@@ -1,0 +1,23 @@
+environment: development
+apphost: k8s
+label:
+  name: braveior-buddyrewards-notificationservice
+container:
+  name: braveior-buddyrewards-notificationservice
+  pullPolicy: IfNotPresent
+  image: braveior/braveior.buddyrewards.notificationservice
+  tag: v1
+  port: 80
+replicas: 1
+service:
+  type: NodePort
+  port: 8088
+email: braveior@outlook.com
+emailpassword: Brave1234$$
+resources:
+  requests:
+    cpu: 25m 
+    memory: 64Mi
+  limits:
+    cpu: 75m
+    memory: 264Mi
