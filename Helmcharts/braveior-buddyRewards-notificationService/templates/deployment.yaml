@@ -26,10 +26,6 @@ spec:
               value: {{ .Values.apphost }}
             - name: appenvironment
               value: {{ .Values.environment }}
-            - name: email
-              value: {{ .Values.email }}
-            - name: emailpassword
-              value: {{ .Values.emailpassword }}
           resources:
             requests:
               cpu: {{ .Values.resources.requests.cpu }}

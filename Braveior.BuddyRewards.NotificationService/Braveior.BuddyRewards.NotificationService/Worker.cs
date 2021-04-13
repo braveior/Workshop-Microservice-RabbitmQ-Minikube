@@ -17,10 +17,12 @@ namespace Braveior.BuddyRewards.NotificationService
     {
         private IConnection _connection;
         private IModel _channel;
+        private readonly ILogger<Worker> _logger;
 
-        public Worker()
+        public Worker(ILogger<Worker> logger)
         {
-
+            InitRabbitMQ();
+            _logger = logger;
         }
         private void InitRabbitMQ()
         {
@@ -77,17 +79,19 @@ namespace Braveior.BuddyRewards.NotificationService
             using (var client = new SmtpClient())
             {
                 client.Connect("smtp-mail.outlook.com", 587, false);
-
                 // Note: only needed if the SMTP server requires authentication
-                client.Authenticate(GetEnvironmentVariable("email"), GetEnvironmentVariable("emailpassword"));
-
+                client.Authenticate("braveior@outlook.com","Brave1234$$");
+                
                 client.Send(message);
                 client.Disconnect(true);
+                _logger.LogInformation($"[email sent successfully]");
             }
         }
-        private static string GetEnvironmentVariable(string name)
+        public override void Dispose()
         {
-            return Environment.GetEnvironmentVariable(name.ToLower()) ?? Environment.GetEnvironmentVariable(name.ToUpper());
+            _channel.Close();
+            _connection.Close();
+            base.Dispose();
         }
     }
 }

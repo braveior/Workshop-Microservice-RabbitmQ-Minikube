@@ -13,7 +13,7 @@ namespace Braveior.BuddyRewards.API
         public static void Main(string[] args)
         {
             ConfigureLogging();
-            DB.InitAsync("buddyrewards", "127.0.0.1", 27017).GetAwaiter().GetResult();
+            DB.InitAsync("buddyrewards", GetEnvironmentVariable("mongoip"), 27017).GetAwaiter().GetResult();
             CreateHostBuilder(args).Build().Run();
         }
 

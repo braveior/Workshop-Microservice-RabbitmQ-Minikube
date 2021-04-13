@@ -12,8 +12,6 @@ replicas: 1
 service:
   type: NodePort
   port: 8088
-email: braveior@outlook.com
-emailpassword: Brave1234$$
 resources:
   requests:
     cpu: 25m 
